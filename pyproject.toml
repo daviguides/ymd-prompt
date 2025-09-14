@@ -1,0 +1,44 @@
+[project]
+name = "ymd-prompt"
+version = "0.2.0"
+description = "Load, validate, and render YMD (YAML + Markdown) prompt files with Pydantic + Jinja2."
+authors = [{ name = "Davi Guides", email = "davi.guides@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+keywords = ["prompt", "yaml", "markdown", "ymd", "jinja2", "llm"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries",
+]
+
+dependencies = [
+    "pydantic>=2.6",
+    "pyyaml>=6.0.1",
+    "jinja2>=3.1.3",
+]
+
+[project.scripts]
+ymd-render = "ymd.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/daviguides/ymd-prompt"
+Repository = "https://github.com/daviguides/ymd-prompt"
+Issues = "https://github.com/daviguides/ymd-prompt/issues"
+
+[tool.setuptools]
+packages = ["ymd"]
+
+[dependency-groups]
+dev = [
+    "ipdb>=0.13.13",
+    "ipykernel>=6.30.1",
+    "ipython>=8.18.1",
+    "pre-commit>=4.3.0",
+    "ruff>=0.13.0",
+]
+
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
