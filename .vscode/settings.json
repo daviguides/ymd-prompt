@@ -1,0 +1,3 @@
+{
+  "python.defaultInterpreterPath": "${env:HOME}/work/bin/uv/envs/ymd-prompt/bin/python3",
+}

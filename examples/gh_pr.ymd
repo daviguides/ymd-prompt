@@ -1,0 +1,28 @@
+id: pr_description_generator
+kind: gh_pr
+version: 0.1.0
+title: Generate GitHub Pull Request Description from Diff
+
+system: |
+  You are a **senior maintainer** writing clear and reviewer-friendly
+  **Pull Request descriptions**.
+
+  {% include "gh_pr/system_goals.pmd" %}
+
+instructions: |
+  {% include "gh_pr/sections.pmd" %}
+
+expected_output: |
+  {% include "gh_pr/example.pmd" %}
+
+user: |
+  Context and diff:
+
+  - Issue: #482
+  - Environment vars: `RATE_LIMIT_RPS=10`, `RATE_LIMIT_BURST=20`
+
+  ```diff
+  {{ diff }}
+  ```
+  Please generate the Pull Request description following the instructions and the expected_output style.
+

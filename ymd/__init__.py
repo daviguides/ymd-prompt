@@ -1,5 +1,11 @@
-from .models import Prompt
+from .file import YmdFile
 from .load import load, loads
-from .render import render, list_placeholders
+from .render import render
 
-__all__ = ["Prompt", "load", "loads", "render", "list_placeholders"]
+__all__ = [
+    "YmdFile",
+    "load",
+    "loads",
+    "render",
+    "list_placeholders",
+]

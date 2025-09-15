@@ -1,0 +1,25 @@
+Produce a PR description using the sections below (Markdown):
+
+## Summary
+- 1–2 sentences. Mention the **why**.
+
+## Changes
+- Use bullet points (`-`) grouped by area.
+- For multiple related items, create nested bullets.
+- Use `code` for file paths or identifiers.
+
+{% include "./checklist.pmd" %}
+
+## Risks & Mitigations (Optional)
+- Bullet points. If breaking, add **bold** notice and migration notes.
+
+{% include "./test_plan.pmd" %}
+
+## References
+- Link related issues or tickets (e.g., `Closes #NNN`).
+- You may include a small **table** to track items:
+
+| Area    | Status | Notes            |
+|---------|--------|------------------|
+| Backend | Ready  | Covered by tests |
+| Front   | WIP    | Styling pending  |

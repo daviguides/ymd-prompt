@@ -1,0 +1,7 @@
+## Checklist
+
+- [ ] Tests added/updated
+- [ ] Docs updated
+- [ ] No breaking changes
+
+{% include "./testing/test_plan.pmd" %}

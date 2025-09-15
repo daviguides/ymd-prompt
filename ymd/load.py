@@ -1,26 +1,29 @@
-from __future__ import annotations
+"""
+ymd/load.py
+
+Functional facade to load `.ymd` files into a `Prompt` model.
+For OO usage, see `ymd/file.py` (YmdFile).
+"""
+
 from pathlib import Path
-from typing import Union
-import yaml
-from .models import Prompt
 
-PathLike = Union[str, Path]
+from .file import YmdFile
 
-def load(path: PathLike) -> Prompt:
-    p = Path(path)
-    if not p.exists():
-        raise FileNotFoundError(f"YMD file not found: {p}")
-    text = p.read_text(encoding="utf-8")
-    return loads(text, source=str(p))
 
-def loads(text: str, *, source: str | None = None) -> Prompt:
-    try:
-        data = yaml.safe_load(text)
-    except yaml.YAMLError as e:
-        msg = f"Invalid YAML in {source or '<string>'}: {e}"
-        raise ValueError(msg) from e
+def load(path: str | Path) -> YmdFile:
+    """
+    Load a YMD file from disk and return a validated Prompt model.
+    """
+    # return YmdFile.from_path(path).sections  # type: ignore[return-value]
+    return YmdFile.from_path(path)
 
-    if not isinstance(data, dict):
-        raise ValueError("YMD root must be a YAML mapping (dict-like).")
 
-    return Prompt(**data)
+def loads(text: str, *, source: str | None = None) -> YmdFile:
+    """
+    Load a YMD document from a raw string and return a validated Prompt model.
+    """
+    y = YmdFile.from_raw(text)
+    if source:
+        setattr(y, "_source", source)
+    # return y.sections  # type: ignore[return-value]
+    return y

@@ -1,0 +1,6 @@
+## Test Plan
+- Steps to validate locally (numbered list).
+- You may include code snippets:
+  ```bash
+  make test
+  ```

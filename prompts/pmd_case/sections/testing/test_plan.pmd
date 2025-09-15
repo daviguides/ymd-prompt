@@ -1,0 +1,5 @@
+## Test Plan
+
+1. Run `{{ test_command }}`
+2. Verify endpoint `{{ endpoint }}`
+3. Confirm logs contain "{{ expected_log }}"

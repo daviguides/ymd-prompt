@@ -1,0 +1,31 @@
+Example PR description (structure and tone):
+
+## Summary
+Introduce **configurable rate limiting** to protect the public API and
+reduce abuse during traffic spikes.
+
+## Changes
+- backend
+  - Add `RateLimiter` with token-bucket strategy
+  - Wire limiter in `api/router.py` for `/v1/*` endpoints
+- ops
+  - Add `RATE_LIMIT_RPS` and `RATE_LIMIT_BURST` env vars
+- tests
+  - Add unit tests for refill logic and burst handling
+
+{% include "./example/example_checklist.pmd" %}
+
+## Risks & Mitigations
+- **Potential 429s** for heavy users → provide override via header for admins
+- Monitor `429_count` metric and error budget
+
+## Test Plan
+1. `make dev && make test`
+2. Send 100 req/s to `/v1/ping` and confirm 429 rate ≈ expected
+3. Toggle `RATE_LIMIT_*` and verify behavior
+
+## References
+- Closes #482
+- Dashboard: https://example.com/grafana/rate-limit
+
+{{ blue }}

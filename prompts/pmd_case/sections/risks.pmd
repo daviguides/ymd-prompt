@@ -1,0 +1,4 @@
+## Risks & Mitigations
+
+- **Potential regression** in authentication → {{ mitigation }}
+- Monitor metrics: `{{ metric_name }}`
