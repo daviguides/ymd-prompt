@@ -26,4 +26,3 @@ user: |
   {{ diff }}
   ```
   Please generate the Pull Request description following the instructions and the expected_output style.
-
