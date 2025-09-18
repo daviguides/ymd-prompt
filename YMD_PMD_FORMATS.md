@@ -77,7 +77,7 @@ While sections are flexible and user-definable, common patterns include:
 
 ### Complete YMD Example
 
-```yaml
+````yaml
 id: pr_description_generator
 kind: gh_pr
 version: 0.1.0
@@ -106,15 +106,15 @@ user: |
   {% include "github/pr_context.pmd" %}
 
   **Diff to analyze:**
-  ````diff
+  ```diff
   {{diff}}
-  ````
+  ```
 
   **Additional context:**
   - Branch: {{branch_name}}
   - Author: {{author}}
   - Files changed: {{files_changed}}
-```
+````
 
 ---
 
@@ -599,7 +599,7 @@ prompts/
 
 ### GitHub Workflow Automation
 
-```yaml
+````yaml
 # github_pr_comprehensive.ymd
 id: github_pr_comprehensive
 kind: code_review
@@ -624,12 +624,12 @@ user: |
 
   **Files changed:** {{files_changed}}
   **Diff:**
-  ````diff
+  ```diff
   {{diff}}
-  ````
+  ```
 
   {% include "github/analysis_requirements.pmd" %}
-```
+````
 
 ### API Documentation Generation
 
