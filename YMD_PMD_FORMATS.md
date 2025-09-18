@@ -667,7 +667,7 @@ user: |
 
 ### Code Review Templates
 
-```yaml
+````yaml
 # security_review.ymd
 id: security_code_review
 kind: security_audit
@@ -698,7 +698,7 @@ user: |
   ```
 
   {% include "security/specific_concerns.pmd" %}
-```
+````
 
 ---
 
