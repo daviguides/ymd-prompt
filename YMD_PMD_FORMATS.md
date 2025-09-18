@@ -106,9 +106,9 @@ user: |
   {% include "github/pr_context.pmd" %}
 
   **Diff to analyze:**
-  ```diff
+  ````diff
   {{diff}}
-  ```
+  ````
 
   **Additional context:**
   - Branch: {{branch_name}}
@@ -624,9 +624,9 @@ user: |
 
   **Files changed:** {{files_changed}}
   **Diff:**
-  ```diff
+  ````diff
   {{diff}}
-  ```
+  ````
 
   {% include "github/analysis_requirements.pmd" %}
 ```
