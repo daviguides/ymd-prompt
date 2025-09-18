@@ -633,7 +633,7 @@ user: |
 
 ### API Documentation Generation
 
-```yaml
+````yaml
 # api_docs_generator.ymd
 id: api_documentation_generator
 kind: technical_writing
@@ -663,7 +663,7 @@ user: |
   ```yaml
   {{openapi_spec}}
   ```
-```
+````
 
 ### Code Review Templates
 
